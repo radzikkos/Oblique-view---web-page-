@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src='functions.js'></script>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <form name="formula" onclick="return validate()">
+        <p>Kąt wyrzutu kulki względem podłoża (w stopniach)</p>
+        <input type="text" size="20" id="angle" value="45" /><br/>
+        <p>Prędkość wyrzutu kulki (m/s)</p>
+        <input type="text" size="20" id="velocity" value="45" /><br/>
+        <p>Początkowa wysokość kulki (m)</p>
+        <input type="text" size="20" id="height" value="0" /><br/>
+        </br>
+        Zatwierdź swoje dane
+        <input type="submit" name="submit" value="Potwierdź" />
+    </form>
+    </br>
+
+    <input type="button" onclick="drawThrow()" value="Rysuj">
+    </br>
+    <h1 id="canvasTitle" onmouseover="mouseOver()" onmouseout="mouseOut()">Zmiana położenia obiektu w czasie</h1>
+    <canvas id='canvas' width='600' height='400'>
+        Canvas not supported
+     </canvas>
+
+    <script>
+        drawGrid();
+        drawAxes();
+    </script>
+    <!--
+    <script src='drawGrid.js'></script>
+    <script src='drawAxes.js'></script>
+-->
+</body>
+
+</html>
