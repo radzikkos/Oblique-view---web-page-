@@ -2,41 +2,96 @@
 <html>
 
 <head>
+    <title>Rzut ukośny - Łukasz Radzik</title>
     <meta charset="UTF-8">
     <script src='functions.js'></script>
+    <script src='scripts.js'></script>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
 
-    <form name="formula" onclick="return validate()">
-        <p>Kąt wyrzutu kulki względem podłoża (w stopniach)</p>
-        <input type="text" size="20" id="angle" value="45" /><br/>
-        <p>Prędkość wyrzutu kulki (m/s)</p>
-        <input type="text" size="20" id="velocity" value="45" /><br/>
-        <p>Początkowa wysokość kulki (m)</p>
-        <input type="text" size="20" id="height" value="0" /><br/>
+    <header>
+        Rzut ukośny
         </br>
-        Zatwierdź swoje dane
-        <input type="submit" name="submit" value="Potwierdź" />
-    </form>
+        <img src="pictures/parabola.png" id="entryImage" alt="Rzut ukośny" width="450" height="250">
+    </header>
     </br>
 
-    <input type="button" onclick="drawThrow()" value="Rysuj">
-    </br>
-    <h1 id="canvasTitle" onmouseover="mouseOver()" onmouseout="mouseOut()">Zmiana położenia obiektu w czasie</h1>
-    <canvas id='canvas' width='600' height='400'>
+    <div class="container">
+        <div class="menu">
+            <div id="theory" onclick="showTheory()">
+                Teoria
+            </div>
+            </br>
+            <article id="theoryCore">Rzut ukośny – ruch w jednorodnym polu grawitacyjnym z prędkością początkową o kierunku ukośnym do kierunku pola. Ruch ten odpowiada ruchowi ciała rzuconego pod kątem do poziomu. Za rzut ukośny uznaje się też ruch ciała w kierunku ukośnym do
+                jednorodnego pola elektrycznego. Rzut ukośny w przypadku braku oporów ośrodka można rozważać jako ruch składający się z rzutu pionowego w górę oraz ruchu jednostajnego prostoliniowego.
+                </br><button type="button" onclick="showMoreInformation()">Więcej informacji!</button></br>
+            </article>
+            </br>
+            <article id="moreTheory">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
+                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia
+                non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+                vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis
+                praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+                rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+                autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
+                consequatur aut perferendis doloribus asperiores repellat.</article>
+
+        </div>
+        <div class="visualisation">
+            <div class="showPlot" onclick="showPlot()">
+                Wizualizacja
+            </div>
+            </br>
+            <div class="plot">
+                </br>
+                <form name="formula" onclick="return validate()">
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Kąt wyrzutu kulki względem podłoża (w stopniach)</p>
+                            </td>
+                            <td><input type="text" size="5" id="angle" value="45" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Prędkość wyrzutu kulki (m/s) </p>
+                            </td>
+                            <td><input type="text" size="5" id="velocity" value="45" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Początkowa wysokość kulki (m)</p>
+                            </td>
+                            <td><input type="text" size="5" id="height" value="0" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Zatwierdź swoje dane</p>
+                            </td>
+                            <td><input type="submit" name="submit" value="Potwierdź" /></td>
+                        </tr>
+
+                    </table>
+                    </br>
+                    <input type="button" style="width: 200px;" onclick="drawThrow()" value="Rysuj">
+                    </br>
+                    <h1 id="canvasTitle" onmouseover="mouseOver()" onmouseout="mouseOut()">Zmiana położenia obiektu w czasie</h1>
+                    <canvas id='canvas' width='600' height='400'>
         Canvas not supported
      </canvas>
 
-    <script>
-        drawGrid();
-        drawAxes();
-    </script>
-    <!--
-    <script src='drawGrid.js'></script>
-    <script src='drawAxes.js'></script>
--->
+                    <script>
+                        drawGrid();
+                        drawAxes();
+                    </script>
+            </div>
+
+
+            <audio id="audio" src="sounds/3963.mp3"></audio>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-var readyToDraw = true;
+var readyToDraw = false;
 
 function mouseOver() {
     document.getElementById("canvas").style.background = "#eebfbf";
@@ -81,22 +81,22 @@ function drawAxes() {
     context.lineTo(45, 30);
 
     context.font = "10px Arial";
-    var number = 10;
+    var number = 20;
     for (var x = 70; x <= 530; x += 20) {
         context.moveTo(x, 350);
         context.lineTo(x, 345);
         context.lineTo(x, 355);
         context.fillText(number, x - 7, 370);
-        number += 10;
+        number += 20;
     }
-    number = 10;
+    number = 20;
 
     for (var y = 20; y <= 330; y += 20) {
         context.moveTo(50, 350 - y);
         context.lineTo(45, 350 - y);
         context.lineTo(55, 350 - y);
         context.fillText(number, 20, 350 - y + 5);
-        number += 10;
+        number += 20;
     }
 
     context.strokeStyle = "#00A";
@@ -123,6 +123,7 @@ var ball = {
 
 
 function drawThrow() {
+
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -131,6 +132,7 @@ function drawThrow() {
     // drawAxes();
     draw();
     if (!readyToDraw) { return; }
+    playSound();
     ball.alpha = document.getElementById("angle").value;
     ball.v0 = document.getElementById("velocity").value;
     ball.yStart = 350 - document.getElementById("height").value;
@@ -149,4 +151,9 @@ function drawThrow() {
     }
 
     ctx.fill();
+}
+
+function playSound() {
+    var audio = document.getElementById("audio");
+    audio.play();
 }
