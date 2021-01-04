@@ -1,17 +1,12 @@
-#canvas {
-    margin: 10px;
-    background: #ffffff;
-    border: thin inset #aaaaaa;
-}
-
-#canvasTitle {
-    margin: auto;
-    width: 60%;
-}
-
 header {
     text-align: center;
     display: block;
+    font-size: xx-large;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    width: 50%;
+    margin: auto;
+    background-color: rgb(250, 247, 50);
 }
 
 body {
@@ -19,17 +14,26 @@ body {
     background-color: #ebf1c6;
 }
 
-#plot {
-    /* white-space: pre-line; */
-    display: none;
-    width: 100%;
-    text-align: center;
-    border: 2px dashed #f69c55;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.container p {
+    display: inline
+}
+
+.menu {
+    background-color: rgb(250, 247, 50);
+    border: 2px solid black;
+    padding: 1%;
+    border-radius: 25px;
 }
 
 #theory {
     text-align: center;
-    border: 2px dashed #f69c55;
+    border: 2px dashed #000000;
     color: darkblue;
     font-size: xx-large;
     background-color: #52C3F0;
@@ -53,51 +57,39 @@ body {
     border: 2px dashed #f69c55;
 }
 
-header {
-    font-size: xx-large;
-    border: 2px solid #000000;
-    border-radius: 25px;
-    width: 50%;
-    margin: auto;
-    background-color: rgb(250, 247, 50);
-}
-
-.menu {
-    background-color: rgb(250, 247, 50);
-    border: 2px solid black;
-    /* width: 60%; */
-    padding: 1%;
-    border-radius: 25px;
-}
-
 .visualisation {
     border: 2px solid black;
     border-radius: 25px;
     padding: 1%;
-    /* width: 60%; */
-    /* margin-left: auto;
-    margin-right: 0; */
     background-color: rgb(250, 247, 50);
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.container p {
-    display: inline
 }
 
 #showPlot {
     text-align: center;
-    border: 2px dashed #f69c55;
+    border: 2px dashed #000000;
     color: darkblue;
     font-size: xx-large;
     background-color: #52C3F0;
     width: 50%;
     margin: auto;
+}
+
+#plot {
+    display: none;
+    width: 100%;
+    text-align: center;
+    border: 2px dashed #f69c55;
+}
+
+#canvasTitle {
+    margin: auto;
+    width: 60%;
+}
+
+#canvas {
+    margin: 10px;
+    background: #ffffff;
+    border: thin inset #aaaaaa;
 }
 
 table {

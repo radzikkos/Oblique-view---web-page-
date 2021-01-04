@@ -1,5 +1,3 @@
-// var readyToDraw = false;
-
 function validate() {
     //Dorobić sprawdzanie czy podano liczby
     // if ((!Number.isInteger(document.getElementById("angle").value)) || (!Number.isInteger(document.getElementById("velocity").value)) ||
@@ -8,6 +6,18 @@ function validate() {
     //     readyToDraw = false;
     //     return false;
     // }
+    if (isNaN(document.getElementById("angle").value)) {
+        alert("Podaj poprawną liczbę dla kąta");
+        return false;
+    }
+    if (isNaN(document.getElementById("velocity").value)) {
+        alert("Podaj poprawną liczbę dla prędkości");
+        return false;
+    }
+    if (isNaN(document.getElementById("height").value)) {
+        alert("Podaj poprawną liczbę dla wysokości");
+        return false;
+    }
     if ((document.getElementById("angle").value > 91) || (document.getElementById("angle").value < 0)) {
         alert("Wartość kąta może być pomiędzy 0 - 90");
         return false;
