@@ -1,12 +1,4 @@
-var readyToDraw = false;
-
-function mouseOver() {
-    document.getElementById("canvas").style.background = "#eebfbf";
-}
-
-function mouseOut() {
-    document.getElementById("canvas").style.background = "#ffffff";
-}
+// var readyToDraw = false;
 
 function validate() {
     //Dorobić sprawdzanie czy podano liczby
@@ -18,22 +10,19 @@ function validate() {
     // }
     if ((document.getElementById("angle").value > 91) || (document.getElementById("angle").value < 0)) {
         alert("Wartość kąta może być pomiędzy 0 - 90");
-        readyToDraw = false;
         return false;
     }
-    if ((document.getElementById("velocity").value > 100) || (document.getElementById("velocity").value < 0)) {
-        alert("Wartość prędkości może być pomiędzy 0 - 100");
-        readyToDraw = false;
+    if ((document.getElementById("velocity").value > 60) || (document.getElementById("velocity").value < 0)) {
+        alert("Wartość prędkości może być pomiędzy 0 - 60");
         return false;
     }
     if ((document.getElementById("height").value > 200) || (document.getElementById("velocity").value < 0)) {
         alert("Wysokość początkowa może być pomiędzy 0 - 200");
-        readyToDraw = false;
         return false;
     }
 
-    readyToDraw = true;
-    return false;
+
+    return true;
 }
 
 function draw() {
@@ -64,7 +53,7 @@ function drawGrid() {
 function drawAxes() {
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    // context.strokeStyle = "#ddd";
+
     context.beginPath();
     context.moveTo(50, 350);
     context.lineTo(550, 350);
@@ -102,6 +91,7 @@ function drawAxes() {
     context.strokeStyle = "#00A";
     context.stroke();
 }
+
 var ball = {
     xStart: 50,
     yStart: 350,
@@ -128,10 +118,11 @@ function drawThrow() {
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // drawGrid();
-    // drawAxes();
     draw();
-    if (!readyToDraw) { return; }
+
+    if (!validate()) {
+        return;
+    }
     playSound();
     ball.alpha = document.getElementById("angle").value;
     ball.v0 = document.getElementById("velocity").value;

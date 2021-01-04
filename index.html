@@ -20,7 +20,7 @@
 
     <div class="container">
         <div class="menu">
-            <div id="theory" onclick="showTheory()">
+            <div id="theory" onclick="showTheory()" onmouseover="mouseOverTheory()" onmouseout="mouseOutTheory()">
                 Teoria
             </div>
             </br>
@@ -40,58 +40,57 @@
 
         </div>
         <div class="visualisation">
-            <div class="showPlot" onclick="showPlot()">
+            <div id="showPlot" onclick="showPlot()" onmouseover="mouseOverShowPlot()" onmouseout="mouseOutShowPlot()">
                 Wizualizacja
             </div>
             </br>
-            <div class="plot">
+            <div id="plot">
                 </br>
-                <form name="formula" onclick="return validate()">
-                    <table>
-                        <tr>
-                            <td>
-                                <p>Kąt wyrzutu kulki względem podłoża (w stopniach)</p>
-                            </td>
-                            <td><input type="text" size="5" id="angle" value="45" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Prędkość wyrzutu kulki (m/s) </p>
-                            </td>
-                            <td><input type="text" size="5" id="velocity" value="45" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Początkowa wysokość kulki (m)</p>
-                            </td>
-                            <td><input type="text" size="5" id="height" value="0" /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Zatwierdź swoje dane</p>
-                            </td>
-                            <td><input type="submit" name="submit" value="Potwierdź" /></td>
-                        </tr>
+                <!-- <form name="formula" onclick="return validate()"> -->
+                <form name="formula"></form>
+                <table>
+                    <tr>
+                        <td>
+                            <p>Kąt wyrzutu kulki względem podłoża (w stopniach)</p>
+                        </td>
+                        <td><input type="text" size="5" id="angle" value="45" /> 0-90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Prędkość wyrzutu kulki (m/s) </p>
+                        </td>
+                        <td><input type="text" size="5" id="velocity" value="45" /> 0-60</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Początkowa wysokość kulki (m)</p>
+                        </td>
+                        <td><input type="text" size="5" id="height" value="0" /> 0-200</td>
+                    </tr>
+                </table>
 
-                    </table>
-                    </br>
-                    <input type="button" style="width: 200px;" onclick="drawThrow()" value="Rysuj">
-                    </br>
-                    <h1 id="canvasTitle" onmouseover="mouseOver()" onmouseout="mouseOut()">Zmiana położenia obiektu w czasie</h1>
-                    <canvas id='canvas' width='600' height='400'>
+                </br>
+                <input type="button" style="width: 200px;" onclick="drawThrow()" value="Rysuj">
+                </br>
+
+                <h1 id="canvasTitle" onmouseover="mouseOver()" onmouseout="mouseOut()">Zmiana położenia obiektu w czasie</h1>
+                <canvas id='canvas' width='600' height='400'>
         Canvas not supported
      </canvas>
 
-                    <script>
-                        drawGrid();
-                        drawAxes();
-                    </script>
+                <script>
+                    drawGrid();
+                    drawAxes();
+                </script>
             </div>
 
 
             <audio id="audio" src="sounds/3963.mp3"></audio>
         </div>
     </div>
+    <footer>
+        <p>Page created by Łukasz Radzik</p>
+    </footer>
 </body>
 
 </html>
