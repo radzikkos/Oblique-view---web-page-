@@ -1,11 +1,5 @@
 function validate() {
-    //Dorobić sprawdzanie czy podano liczby
-    // if ((!Number.isInteger(document.getElementById("angle").value)) || (!Number.isInteger(document.getElementById("velocity").value)) ||
-    //     (!Number.isInteger(document.getElementById("height").value))) {
-    //     alert("Wartości muszą być liczbami");
-    //     readyToDraw = false;
-    //     return false;
-    // }
+
     if (isNaN(document.getElementById("angle").value)) {
         alert("Podaj poprawną liczbę dla kąta");
         return false;
@@ -26,11 +20,10 @@ function validate() {
         alert("Wartość prędkości może być pomiędzy 0 - 60");
         return false;
     }
-    if ((document.getElementById("height").value > 200) || (document.getElementById("velocity").value < 0)) {
+    if ((document.getElementById("height").value > 200) || (document.getElementById("height").value < 0)) {
         alert("Wysokość początkowa może być pomiędzy 0 - 200");
         return false;
     }
-
 
     return true;
 }
@@ -56,7 +49,6 @@ function drawGrid() {
 
     context.stroke();
 }
-
 
 
 

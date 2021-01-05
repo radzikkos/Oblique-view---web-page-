@@ -7,6 +7,7 @@ header {
     width: 50%;
     margin: auto;
     background-color: rgb(250, 247, 50);
+    margin-bottom: 1%;
 }
 
 body {
@@ -31,6 +32,10 @@ body {
     border-radius: 25px;
 }
 
+h4 {
+    text-align: left;
+}
+
 #theory {
     text-align: center;
     border: 2px dashed #000000;
@@ -39,6 +44,7 @@ body {
     background-color: #52C3F0;
     width: 50%;
     margin: auto;
+    margin-bottom: 1%;
 }
 
 #theoryCore {
@@ -47,14 +53,19 @@ body {
     width: 100%;
     text-align: center;
     border: 2px dashed #f69c55;
+    /* text-align: left; */
+    margin-bottom: 1%;
 }
 
 #moreTheory {
     display: none;
-    white-space: pre-line;
+    /* white-space: pre-line; */
+    white-space: unset;
     width: 100%;
+    /* text-align: left; */
     text-align: center;
     border: 2px dashed #f69c55;
+    margin-bottom: 1%;
 }
 
 .visualisation {
@@ -72,6 +83,7 @@ body {
     background-color: #52C3F0;
     width: 50%;
     margin: auto;
+    margin-bottom: 1%;
 }
 
 #plot {
@@ -96,6 +108,8 @@ table {
     text-align: left;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }
 
 footer {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl-PL">
 
 <head>
     <title>Rzut ukośny - Łukasz Radzik</title>
@@ -12,11 +12,11 @@
 <body>
 
     <header>
-        Rzut ukośny
-        </br>
+        <h3>Rzut ukośny</h3>
+        <!-- </br> -->
         <img src="pictures/parabola.png" id="entryImage" alt="Rzut ukośny" width="450" height="250">
     </header>
-    </br>
+    <!-- </br> -->
 
     <div class="container">
 
@@ -24,20 +24,25 @@
             <div id="theory" onclick="showTheory()" onmouseover="mouseOverTheory()" onmouseout="mouseOutTheory()">
                 Teoria
             </div>
-            </br>
-            <article id="theoryCore">Rzut ukośny – ruch w jednorodnym polu grawitacyjnym z prędkością początkową o kierunku ukośnym do kierunku pola. Ruch ten odpowiada ruchowi ciała rzuconego pod kątem do poziomu. Za rzut ukośny uznaje się też ruch ciała w kierunku ukośnym do
-                jednorodnego pola elektrycznego. Rzut ukośny w przypadku braku oporów ośrodka można rozważać jako ruch składający się z rzutu pionowego w górę oraz ruchu jednostajnego prostoliniowego.
-                </br><button type="button" onclick="showMoreInformation()">Więcej informacji!</button></br>
+            <!-- </br> -->
+            <article id="theoryCore">
+                <h4>Rzut ukośny – ruch w jednorodnym polu grawitacyjnym z prędkością początkową o kierunku ukośnym do kierunku pola. Ruch ten odpowiada ruchowi ciała rzuconego pod kątem do poziomu. Za rzut ukośny uznaje się też ruch ciała w kierunku ukośnym
+                    do jednorodnego pola elektrycznego. Rzut ukośny w przypadku braku oporów ośrodka można rozważać jako ruch składający się z rzutu pionowego w górę oraz ruchu jednostajnego prostoliniowego.
+                </h4>
+                <button type="button" id="button1" onclick="showMoreInformation()">Więcej informacji</button>
+                <!-- </br> -->
             </article>
-            </br>
-            <article id="moreTheory">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,
-                quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia
-                non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-                vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis
-                praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
-                autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-                consequatur aut perferendis doloribus asperiores repellat.</article>
+            <!-- </br> -->
+            <article id="moreTheory">
+                <h4>Ciało porusza się z prędkością, której wektor skierowany bywa ukośnie - pod kątem alfa do poziomu. Prędkość możemy rozłożyć na dwie składowe - pionową i poziomą (analogia do dodawania wektorów). Tak więc szybkość ukośna v0 to oryginalnie
+                    prędkości składowe: v0x i v0y (rzuty v0 na osie układu współrzędnych). Wartości wektorów składowych możemy obliczyć z funkcji trygonometrycznych. Jeżeli znamy kąt, jaki tworzy nasz wektor prędkości, umiemy wyznaczyć składowe vx i vy:
+                    v0x = v0 cos(alpha) v0 y, = v_0 sin(alpha) Możemy już artykułować o dwóch ruchach ciała. Ruch poziomy, jednostajny - bez przyspieszenia, z nadaną prędkością v0x. Położenie, odległość ciała w danej chwili, możemy kojarzyć z drogą w
+                    ruchu jednostajnym (oznaczmy je x). Wzór na drogę s=vt. x=v0x t Ruch w kierunku pionowym to drgnienie opóźniony, z przyspieszeniem ziemskim zwróconym ku Ziemi. Prędkość v0y skierowana w górę, 'spowalniana' poprzez przyspieszenie -
+                    sytuacja jeśli w rzucie pionowym. Położenie w linii pionowej, czyli wysokość, obliczymy jeśli drogę w ruchu opóźnionym. y=v0y t - (g t^2)/2 Równanie toru Jeśli podstawimy w powyższych równania wzory na odpowiednie prędkości, uzyskamy
+                    x=v0 cos(alpha) t y=v0sin(alpha) - (g t^2)/2 Dzięki temu równaniu możemy narysować w układzie współrzędnych tor lotu (jest to równianie paraboli) i wyznaczyć inne wzory. Równanie to pokazuje zależność pomiędzy wysokością a odległością
+                    od punktu wyrzutu (o ile znamy szybkość początkową i kąt wyrzutu).
+                </h4>
+            </article>
 
         </div>
 
@@ -45,9 +50,9 @@
             <div id="showPlot" onclick="showPlot()" onmouseover="mouseOverShowPlot()" onmouseout="mouseOutShowPlot()">
                 Wizualizacja
             </div>
-            </br>
+            <!-- </br> -->
             <div id="plot">
-                </br>
+                <!-- </br> -->
                 <form name="formula"></form>
                 <table>
                     <tr>
@@ -70,9 +75,9 @@
                     </tr>
                 </table>
 
-                </br>
+                <!-- </br> -->
                 <input type="button" style="width: 200px;" onclick="drawThrow()" value="Rysuj">
-                </br>
+                <!-- </br> -->
 
                 <h1 id="canvasTitle" onmouseover="mouseOver()" onmouseout="mouseOut()">Zmiana położenia obiektu w czasie</h1>
                 <canvas id='canvas' width='600' height='400'>

@@ -4,6 +4,7 @@ function showTheory() {
         var moreTheory = document.getElementById("moreTheory");
         theoryCore.style.display = "none";
         moreTheory.style.display = "none";
+        document.getElementById("button1").innerHTML = "Więcej informacji";
     } else {
         theoryCore.style.display = "block";
         theoryCore.style.whiteSpace = "pre-line";
@@ -14,9 +15,11 @@ function showMoreInformation() {
     var moreTheory = document.getElementById("moreTheory");
     if (moreTheory.style.display === "block") {
         moreTheory.style.display = "none";
+        document.getElementById("button1").innerHTML = "Więcej informacji";
     } else {
         moreTheory.style.display = "block";
         moreTheory.style.whiteSpace = "pre-line";
+        document.getElementById("button1").innerHTML = "Mniej informacji";
     }
 }
 
