@@ -1,4 +1,4 @@
-#O blique view
+#Oblique view
 Oblique view is my project on Internet Techniques course at univeristy.
 It gives some theoretical information and also shows a visualisation of oblique view.
 
