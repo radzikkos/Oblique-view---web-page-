@@ -1,3 +1,66 @@
+// Skrypt odpowiadający za obsługę canvasu
+
+
+// Główna klasa, która reprezentuje rzucaną piłkę
+var ball = {
+    xStart: 50,
+    yStart: 350,
+    v0: 60,
+    alpha: 45,
+    g: 9.81,
+    getActualX: function(time) {
+        var radians = this.alpha * (Math.PI / 180);
+        var vOX = this.v0 * Math.cos(radians);
+        return vOX * time + this.xStart;
+    },
+    getActualY: function(time) {
+        var radians = this.alpha * (Math.PI / 180);
+        var vOY = this.v0 * Math.sin(radians);
+        return this.yStart - (vOY * time - this.g / 2 * time * time);
+    }
+
+}
+
+//Funkcja rysująca wykres na canvasie
+function draw() {
+    drawGrid();
+    drawAxes();
+}
+
+// Funckja rysująca rzut na wykresie
+function drawThrow() {
+
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    draw();
+
+    if (!validate()) {
+        return;
+    }
+    playSound();
+    ball.alpha = document.getElementById("angle").value;
+    ball.v0 = document.getElementById("velocity").value;
+    ball.yStart = 350 - document.getElementById("height").value;
+
+
+    ctx.beginPath();
+    var time = 0;
+    while (true) {
+
+        var tempX = ball.getActualX(time);
+        var tempY = ball.getActualY(time);
+        if ((time != 0) && (tempY > 350)) break;
+        ctx.moveTo(tempX, tempY);
+        ctx.arc(tempX, tempY, 5, 0, 2 * Math.PI);
+        time++;
+    }
+
+    ctx.fill();
+}
+
+// Funkcja sprawdzająca poprawność danych od użytkownika
 function validate() {
 
     if (isNaN(document.getElementById("angle").value)) {
@@ -28,10 +91,7 @@ function validate() {
     return true;
 }
 
-function draw() {
-    drawGrid();
-    drawAxes();
-}
+
 
 function drawGrid() {
     var canvas = document.getElementById("canvas");
@@ -92,58 +152,6 @@ function drawAxes() {
 
     context.strokeStyle = "#00A";
     context.stroke();
-}
-
-var ball = {
-    xStart: 50,
-    yStart: 350,
-    v0: 60,
-    alpha: 45,
-    g: 9.81,
-    getActualX: function(time) {
-        var radians = this.alpha * (Math.PI / 180);
-        var vOX = this.v0 * Math.cos(radians);
-        return vOX * time + this.xStart;
-    },
-    getActualY: function(time) {
-        var radians = this.alpha * (Math.PI / 180);
-        var vOY = this.v0 * Math.sin(radians);
-        return this.yStart - (vOY * time - this.g / 2 * time * time);
-    }
-
-}
-
-
-function drawThrow() {
-
-    var c = document.getElementById("canvas");
-    var ctx = c.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    draw();
-
-    if (!validate()) {
-        return;
-    }
-    playSound();
-    ball.alpha = document.getElementById("angle").value;
-    ball.v0 = document.getElementById("velocity").value;
-    ball.yStart = 350 - document.getElementById("height").value;
-
-
-    ctx.beginPath();
-    var time = 0;
-    while (true) {
-
-        var tempX = ball.getActualX(time);
-        var tempY = ball.getActualY(time);
-        if ((time != 0) && (tempY > 350)) break;
-        ctx.moveTo(tempX, tempY);
-        ctx.arc(tempX, tempY, 5, 0, 2 * Math.PI);
-        time++;
-    }
-
-    ctx.fill();
 }
 
 function playSound() {
