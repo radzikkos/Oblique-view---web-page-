@@ -15,3 +15,4 @@ The main aim of this project was to get to know with js, html and css and create
 
 ## Link to page
 https://app-project1-ti.herokuapp.com/
+https://radzikkos.github.io/index.html
